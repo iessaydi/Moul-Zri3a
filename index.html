@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zri3a, fruits secs, bonbons et snacks chez Moul Zri3a.">
+  <title>Moul Zri3a</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="top-bar" data-fr="La petite pause croquante, à la marocaine" data-ar="التگرميلة اللي كتعجبنا، على الطريقة المغربية">La petite pause croquante, à la marocaine</div>
+
+  <header class="site-header container">
+    <a class="logo" href="#home" aria-label="Moul Zri3a">Moul <span>Zri3a.</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#categories" data-fr="Nos rayons" data-ar="المنتوجات">Nos rayons</a>
+      <a id="whatsapp-catalog" href="https://wa.me/c/212769611475" target="_blank" rel="noopener noreferrer" data-fr="Catalogue WhatsApp ↗" data-ar="كتالوغ واتساب ↗">Catalogue WhatsApp ↗</a>
+    </nav>
+    <div class="header-actions">
+      <a class="basket-link" href="#basket"><span data-fr="Panier" data-ar="السلة">Panier</span> <span class="basket-count" id="basket-count">0</span></a>
+      <button class="language-button" id="language-button" type="button" aria-label="Change language">العربية</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME: This is the homepage HTML. Edit its words here. -->
+    <div id="home-view">
+      <section class="hero">
+        <div class="hero-content container">
+          <span class="eyebrow" data-fr="Le goût du quartier" data-ar="بنّة الحومة">Le goût du quartier</span>
+          <h1 data-fr="Toutes vos petites <em>envies</em>, au même endroit." data-ar="كلشي اللي كتشهيه، <em>فبلاصة وحدة.</em>">Toutes vos petites <em>envies</em>, au même endroit.</h1>
+          <p data-fr="Zri3a, fruits secs, bonbons, biscuits, chips et glaces. Un coin familier pour choisir votre prochain plaisir." data-ar="الزريعة، الفواكه الجافة، الحلوى، البسكويت، الشيبس والكلاص. كلشي مجموع باش تختار اللي بغيتي.">Zri3a, fruits secs, bonbons, biscuits, chips et glaces. Un coin familier pour choisir votre prochain plaisir.</p>
+          <a class="primary-link" href="#categories" data-fr="Découvrir les rayons ↗" data-ar="شوف المنتوجات ↗">Découvrir les rayons ↗</a>
+        </div>
+      </section>
+      <section class="intro container">
+        <h2 data-fr="Une envie ?<br>On a le rayon." data-ar="أشنو تشهيتي؟<br>عندنا الاختيار.">Une envie ?<br>On a le rayon.</h2>
+        <p data-fr="Des classiques à grignoter aux douceurs à partager : explorez l’univers du moul zri3a." data-ar="من التگرميلة اليومية للحلوى اللي كتشاركها: اكتشف عالم مول الزريعة.">Des classiques à grignoter aux douceurs à partager : explorez l’univers du moul zri3a.</p>
+      </section>
+      <section class="home-categories container" id="categories">
+        <div class="section-kicker" data-fr="Nos rayons" data-ar="المنتوجات">Nos rayons</div>
+        <!-- The six category tiles are filled from the catalog list in js/main.js. -->
+        <div class="category-grid" id="category-grid"></div>
+      </section>
+      <section class="about">
+        <div class="about-inner container">
+          <h2 data-fr="Le petit commerce qu’on connaît tous." data-ar="الحانوت اللي كاملين كنعرفوه.">Le petit commerce qu’on connaît tous.</h2>
+          <div>
+            <p data-fr="Au Maroc, moul zri3a, c’est le plaisir de choisir une poignée de graines grillées, une douceur ou quelque chose à partager. Ici, on garde cet esprit simple, généreux et plein de saveurs." data-ar="فالمغرب، مول الزريعة هو لذة اختيار شوية زريعة مقرمشة، شي حلوى ولا حاجة تتقسم مع الأحباب. بغينا نحافظو على هاد الروح البسيطة والعامرة بالبنة.">Au Maroc, moul zri3a, c’est le plaisir de choisir une poignée de graines grillées, une douceur ou quelque chose à partager. Ici, on garde cet esprit simple, généreux et plein de saveurs.</p>
+            <div class="about-note">
+              <span data-fr="Vous n’avez pas trouvé ce qu’il vous faut ? Écrivez-nous pour le demander ou poser une question." data-ar="ما لقيتيش اللي بغيتي؟ راسلنا وطلبو ولا سولنا عليه.">Vous n’avez pas trouvé ce qu’il vous faut ? Écrivez-nous pour le demander ou poser une question.</span>
+              <a id="product-request-link" href="https://wa.me/212769611475" target="_blank" rel="noopener noreferrer" data-fr="Nous écrire sur WhatsApp ↗" data-ar="راسلنا على واتساب ↗">Nous écrire sur WhatsApp ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CATEGORY: This layout is reused for all six categories. -->
+    <section id="category-view" class="inner container" hidden>
+      <div class="breadcrumb" id="category-breadcrumb"></div>
+      <div class="category-banner">
+        <div>
+          <span class="eyebrow" data-fr="Moul Zri3a / Nos rayons" data-ar="مول الزريعة / المنتوجات">Moul Zri3a / Nos rayons</span>
+          <h1 id="category-title"></h1>
+          <p id="category-description"></p>
+        </div>
+        <img id="category-image" src="assets/seeds.jpg" alt="">
+      </div>
+      <section class="browse">
+        <div class="browse-heading"><h2 data-fr="À découvrir" data-ar="تصفح المنتوجات">À découvrir</h2><span id="product-count"></span></div>
+        <nav class="category-pills" id="category-pills" aria-label="Categories"></nav>
+        <div class="product-grid" id="category-products"></div>
+      </section>
+    </section>
+
+    <!-- PRODUCT: One layout for every product. Name, image and price come from js/main.js. -->
+    <section id="product-view" class="inner container" hidden>
+      <div class="breadcrumb" id="product-breadcrumb"></div>
+      <div class="product-detail">
+        <img class="product-photo" id="product-image" src="assets/seeds.jpg" alt="">
+        <div class="product-info">
+          <span class="eyebrow" id="product-category"></span>
+          <h1 id="product-title"></h1>
+          <p class="size" id="product-size"></p>
+          <div class="product-price"><span id="product-price"></span></div>
+          <div class="format"><strong data-fr="Format" data-ar="الحجم">Format</strong><p id="product-format"></p></div>
+          <strong data-fr="Quantité" data-ar="الكمية">Quantité</strong>
+          <div class="purchase-actions">
+            <div class="quantity">
+              <button type="button" data-action="product-minus" aria-label="Decrease quantity">−</button>
+              <input id="product-quantity" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Quantity">
+              <button type="button" data-action="product-plus" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="dark-button" id="buy-now" type="button" data-action="buy-now" data-fr="Acheter maintenant" data-ar="اشترِ الآن">Acheter maintenant</button>
+            <button class="orange-button" id="add-basket" type="button" data-action="add-basket" data-fr="Ajouter au panier" data-ar="أضف إلى السلة">Ajouter au panier</button>
+          </div>
+          <div class="status" id="product-status" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <section class="related"><h2 data-fr="Dans le même rayon" data-ar="من نفس الفئة">Dans le même rayon</h2><div class="product-grid" id="related-products"></div></section>
+    </section>
+
+    <!-- BASKET: Customers can review quantities before opening WhatsApp. -->
+    <section id="basket-view" class="inner container" hidden>
+      <div class="breadcrumb" id="basket-breadcrumb"></div>
+      <div class="basket-layout">
+        <section><h1 data-fr="Votre panier" data-ar="السلة ديالك">Votre panier</h1><div id="basket-items"></div></section>
+        <aside class="summary" id="basket-summary" hidden>
+          <h2 data-fr="Récapitulatif" data-ar="ملخص الطلب">Récapitulatif</h2>
+          <div class="summary-row"><span data-fr="Articles" data-ar="المنتوجات">Articles</span><strong id="summary-count"></strong></div>
+          <div class="summary-row"><span data-fr="Sous-total" data-ar="المجموع قبل التوصيل">Sous-total</span><strong id="summary-subtotal"></strong></div>
+          <div class="summary-row"><span data-fr="Frais de livraison" data-ar="رسوم التوصيل">Frais de livraison</span><strong id="summary-delivery"></strong></div>
+          <div class="summary-row"><span data-fr="Total avec livraison" data-ar="المجموع مع التوصيل">Total avec livraison</span><strong id="summary-total"></strong></div>
+          <button class="dark-button" id="confirm-order" type="button" data-action="confirm-order" data-fr="Confirmer sur WhatsApp" data-ar="أكد عبر واتساب">Confirmer sur WhatsApp</button>
+          <p class="delivery-status" id="basket-status" role="status" aria-live="polite"></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <span>© <span id="year"></span> Moul Zri3a</span>
+    <span data-fr="Fait pour les petites envies au Maroc." data-ar="للي كيبغي التگرميلة والحلوى فالمغرب.">Fait pour les petites envies au Maroc.</span>
+    <a href="#home" data-fr="Retour à l’accueil ↑" data-ar="العودة للرئيسية ↑">Retour à l’accueil ↑</a>
+  </footer>
+</body>
+</html>
