@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/category/:id", "destination": "/index.html" },
+    { "source": "/product/:id", "destination": "/index.html" },
+    { "source": "/basket", "destination": "/index.html" },
+    { "source": "/categories", "destination": "/index.html" }
+  ]
+}
