@@ -9,9 +9,22 @@ const catalog = {
   ],
   // Demonstration names and prices. Replace with the shop's actual catalog before selling.
   products: [
-    {id:'amandes',category:'fruits-secs',fr:'Amandes',ar:'لوز',sizeFr:'Sachet 100 g',sizeAr:'كيس 100 غ',price:28},
-    {id:'pistaches',category:'fruits-secs',fr:'Pistaches',ar:'فستق',sizeFr:'Sachet 100 g',sizeAr:'كيس 100 غ',price:38},
-    {id:'melange-noix',category:'fruits-secs',fr:'Mélange de noix',ar:'خليط المكسرات',sizeFr:'Sachet 150 g',sizeAr:'كيس 150 غ',price:42},
+    {id:'noix-cajou',category:'fruits-secs',fr:'Noix de cajou',ar:'كاجو',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:10,image:'assets/Cashews.png',hideSize:true},
+    {id:'mais-grille',category:'fruits-secs',fr:'Maïs grillé',ar:'الذرة',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:5,image:'assets/Corn.png',hideSize:true},
+    {id:'cacahuetes-beldi',category:'fruits-secs',fr:'Cacahuètes beldi',ar:'كاوكاو بلدي',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:4,image:'assets/Penuts Baldi.png',hideSize:true},
+    {id:'cacahuetes',category:'fruits-secs',fr:'Cacahuètes',ar:'كاوكاو',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:4,image:'assets/Penuts Normal.png',hideSize:true},
+    {id:'pistaches',category:'fruits-secs',fr:'Pistaches',ar:'بيستاش',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:10,image:'assets/Pistachios.png',hideSize:true},
+    {id:'graines-tournesol',category:'fruits-secs',fr:'Graines de tournesol',ar:'زريعة كحلة',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:4,image:'assets/Zri3a Ka7la.png',hideSize:true},
+    {id:'amandes',category:'fruits-secs',fr:'Amandes nature',ar:'لوز عادي',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:6,image:'assets/Raw Almonds.png',hideSize:true},
+    {id:'amandes-salees',category:'fruits-secs',fr:'Amandes salées',ar:'لوز مالح',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:8,image:'assets/Salted Almonds.png',hideSize:true},
+    {id:'cacahuetes-sucrees',category:'fruits-secs',fr:'Cacahuètes sucrées',ar:'كاوكاو حلو',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:4,image:'assets/Sweet Peanuts (1).png',hideSize:true},
+    {id:'noix',category:'fruits-secs',fr:'Noix',ar:'كركاع',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:8,image:'assets/Walnuts.png',hideSize:true},
+    {id:'graines-courge-salees',category:'fruits-secs',fr:'Graines de courge salées',ar:'زريعة بيضا',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:6,image:'assets/Zri3a Bida Mal7a.png',hideSize:true},
+    {id:'graines-courge-non-salees',category:'fruits-secs',fr:'Graines de courge non salées',ar:'زريعة بيضا مسوسة',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:6,image:'assets/Zri3a Bida Mssousa.png',hideSize:true},
+    {id:'raisins-secs',category:'fruits-secs',fr:'Raisins secs',ar:'زبيب',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:3,image:'assets/Raisins.png',hideSize:true},
+    {id:'cacahuetes-fromage-piment',category:'fruits-secs',fr:'Cacahuètes au fromage et au piment',ar:'كاوكاو فرماج حار',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:5,image:'assets/Chilli Cheese Peanuts.png',hideSize:true},
+    {id:'cacahuetes-fromage',category:'fruits-secs',fr:'Cacahuètes au fromage',ar:'كاوكاو فرماج',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:5,image:'assets/Cheese Peanuts.png',hideSize:true},
+    {id:'melange-fruits-secs',category:'fruits-secs',fr:'Mélange de fruits secs',ar:'مخلوط الفواكه الجافة',sizeFr:'Paquet 50 g',sizeAr:'كيس 50 غ',listingFr:'50 g',listingAr:'50 غ',price:7,image:'assets/Mixed dried fruits (1).png',hideSize:true},
     {id:'bonbons-fruites',category:'bonbons',fr:'Bonbons fruités',ar:'حلوى بالفواكه',sizeFr:'Sachet 100 g',sizeAr:'كيس 100 غ',price:15},
     {id:'gommes',category:'bonbons',fr:'Gommes assorties',ar:'علكة مشكلة',sizeFr:'Sachet',sizeAr:'كيس',price:10},
     {id:'mix-bonbons',category:'bonbons',fr:'Mix de bonbons',ar:'خليط الحلوى',sizeFr:'Sachet 200 g',sizeAr:'كيس 200 غ',price:24},
@@ -47,7 +60,7 @@ const BASKET_KEY = 'moul-zri3a-basket-v1';
 const DELIVERY_MINIMUM = 25;
 const DELIVERY_FEE = 5;
 const FREE_DELIVERY_THRESHOLD = 50;
-let language = 'fr';
+let language = new URLSearchParams(location.search).get('lang') === 'ar' ? 'ar' : 'fr';
 let productQuantity = 1;
 let previousProductId = null;
 
@@ -63,8 +76,24 @@ const sizeOf = (product) => product[language === 'ar' ? 'sizeAr' : 'sizeFr'];
 const money = (amount) => `${amount} ${language === 'ar' ? 'درهم' : 'MAD'}`;
 const categoryById = (id) => catalog.categories.find(item => item.id === id);
 const productById = (id) => catalog.products.find(item => item.id === id);
-const categoryLink = (id) => `#category/${id}`;
-const productLink = (id) => `#product/${id}`;
+const routeUrl = (params = {}) => {
+  const localPreview = location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(location.hostname);
+  const path = params.category ? `/category/${encodeURIComponent(params.category)}`
+    : params.product ? `/product/${encodeURIComponent(params.product)}`
+      : params.basket ? '/basket'
+        : params.section === 'categories' ? '/categories' : '/';
+  const query = new URLSearchParams();
+  if (language === 'ar') query.set('lang', 'ar');
+  if (localPreview) {
+    Object.entries(params).forEach(([key, value]) => query.set(key, value));
+    const search = query.toString();
+    return search ? `?${search}` : './';
+  }
+  const search = query.toString();
+  return search ? `${path}?${search}` : path;
+};
+const categoryLink = (id) => routeUrl({category: id});
+const productLink = (id) => routeUrl({product: id});
 const imageOf = (product) => product.image || categoryById(product.category).image;
 const clampQuantity = (value) => Math.max(1, Math.min(99, Math.trunc(Number(value) || 1)));
 
@@ -145,6 +174,11 @@ function updateSharedText() {
     element.innerHTML = element.dataset[language];
   });
   document.querySelector('#whatsapp-catalog').href = WHATSAPP_CATALOG;
+  document.querySelector('#home-link').href = routeUrl();
+  document.querySelector('#footer-home-link').href = routeUrl();
+  document.querySelector('#categories-link').href = routeUrl({section: 'categories'});
+  document.querySelector('#categories-cta').href = routeUrl({section: 'categories'});
+  document.querySelector('#basket-link').href = routeUrl({basket: '1'});
   document.querySelector('#product-request-link').href = whatsappLink(t(
     "Bonjour, je n'ai pas trouvé le produit que je cherche. Pouvez-vous me renseigner ?",
     'سلام، ما لقيتش المنتوج اللي كنقلب عليه. واش تقدروا تعاونوني؟'
@@ -154,7 +188,7 @@ function updateSharedText() {
   updateBasketCount();
 }
 function breadcrumb(parts) {
-  return `<a href="#home">${t('Accueil', 'الرئيسية')}</a>${parts.map(part => `<span>/</span>${part}`).join('')}`;
+  return `<a href="${routeUrl()}">${t('Accueil', 'الرئيسية')}</a>${parts.map(part => `<span>/</span>${part}`).join('')}`;
 }
 function productCard(product) {
   return `<a class="product-card" href="${productLink(product.id)}">
@@ -231,7 +265,7 @@ function renderBasket() {
   if (!items.length) {
     list.innerHTML = `<div class="empty-basket"><h2>${t('Votre panier est vide', 'السلة فارغة')}</h2>
       <p>${t('Choisissez des produits pour préparer votre demande.', 'اختار منتوجات باش توجد الطلب ديالك.')}</p>
-      <a class="dark-button" href="#categories">${t('Voir les catégories', 'شوف الفئات')}</a></div>`;
+      <a class="dark-button" href="${routeUrl({section: 'categories'})}">${t('Voir les catégories', 'شوف الفئات')}</a></div>`;
     return;
   }
   list.innerHTML = items.map(item => {
@@ -260,15 +294,21 @@ function renderBasket() {
     : t(`Minimum de commande pour la livraison : ${money(DELIVERY_MINIMUM)}.`, `الحد الأدنى للطلب والتوصيل هو ${money(DELIVERY_MINIMUM)}.`);
 }
 function route() {
-  const [view, id] = location.hash.slice(1).split('/');
+  const params = new URLSearchParams(location.search);
+  const categoryPath = location.pathname.match(/\/category\/([^/]+)\/?$/);
+  const productPath = location.pathname.match(/\/product\/([^/]+)\/?$/);
+  const categoryId = categoryPath ? decodeURIComponent(categoryPath[1]) : params.get('category');
+  const productId = productPath ? decodeURIComponent(productPath[1]) : params.get('product');
+  const showBasket = location.pathname === '/basket' || params.has('basket');
+  const showCategories = location.pathname === '/categories' || params.get('section') === 'categories';
   updateSharedText();
   let selected = 'home';
-  if (view === 'category' && renderCategory(id)) selected = 'category';
-  else if (view === 'product' && renderProduct(id)) selected = 'product';
-  else if (view === 'basket') { renderBasket(); selected = 'basket'; }
+  if (categoryId && renderCategory(categoryId)) selected = 'category';
+  else if (productId && renderProduct(productId)) selected = 'product';
+  else if (showBasket) { renderBasket(); selected = 'basket'; }
   else renderHome();
   Object.entries(views).forEach(([name, element]) => { element.hidden = name !== selected; });
-  if (view === 'categories') requestAnimationFrame(() => document.querySelector('#categories').scrollIntoView());
+  if (showCategories) requestAnimationFrame(() => document.querySelector('#categories').scrollIntoView());
   else window.scrollTo(0, 0);
 }
 
@@ -293,7 +333,7 @@ document.querySelector('main').addEventListener('click', event => {
     location.href = whatsappLink(buyNowMessage(product, productQuantity));
   } else if (action === 'add-basket') {
     addToBasket(button.dataset.id, productQuantity);
-    document.querySelector('#product-status').innerHTML = `${t('Ajouté au panier.', 'تزاد للسلة.')} <a href="#basket">${t('Voir le panier →', 'شوف السلة ←')}</a>`;
+    document.querySelector('#product-status').innerHTML = `${t('Ajouté au panier.', 'تزاد للسلة.')} <a href="${routeUrl({basket: '1'})}">${t('Voir le panier →', 'شوف السلة ←')}</a>`;
   } else if (action === 'confirm-order') {
     if (readBasket().length) location.href = whatsappLink(basketMessage());
   } else {
@@ -318,7 +358,12 @@ document.querySelector('main').addEventListener('change', event => {
 });
 document.querySelector('#language-button').addEventListener('click', () => {
   language = language === 'fr' ? 'ar' : 'fr';
+  const params = new URLSearchParams(location.search);
+  if (language === 'ar') params.set('lang', 'ar');
+  else params.delete('lang');
+  const search = params.toString();
+  history.replaceState(null, '', `${location.pathname}${search ? `?${search}` : ''}`);
   route();
 });
-window.addEventListener('hashchange', route);
+window.addEventListener('popstate', route);
 route();
