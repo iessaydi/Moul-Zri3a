@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Zri3a, fruits secs, bonbons et snacks chez Moul Zri3a.">
   <title>Moul Zri3a</title>
+  <!-- Resolve resources from the site root on hosted category and product pages. -->
+  <script>
+    if (location.protocol !== 'file:' && !['localhost', '127.0.0.1'].includes(location.hostname)) {
+      const base = document.createElement('base');
+      base.href = '/';
+      document.head.appendChild(base);
+    }
+  </script>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
