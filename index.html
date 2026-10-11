@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Zri3a, fruits secs, bonbons et snacks chez Moul Zri3a.">
   <title>Moul Zri3a</title>
+  <script>
+    if (location.protocol !== 'file:') {
+      const base = document.createElement('base');
+      base.href = '/';
+      document.head.append(base);
+    }
+  </script>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
