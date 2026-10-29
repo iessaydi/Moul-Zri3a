@@ -168,6 +168,19 @@ function changeBasketQuantity(id, quantity) {
 function removeFromBasket(id) { saveBasket(readBasket().filter(item => item.id !== id)); }
 function basketCount() { return readBasket().reduce((sum, item) => sum + item.quantity, 0); }
 function updateBasketCount() { document.querySelector('#basket-count').textContent = basketCount(); }
+function updateProductCardControls(id) {
+  const quantity = readBasket().find(item => item.id === id)?.quantity || 0;
+  document.querySelectorAll(`.product-card[data-id="${id}"] .card-add-control`).forEach(actions => {
+    const product = productById(id);
+    actions.innerHTML = quantity
+      ? `<div class="card-quantity" aria-label="${t('Quantité dans le panier', 'الكمية فالسلة')}">
+          <button type="button" data-action="card-minus" aria-label="${t('Diminuer', 'نقص')}">−</button>
+          <span aria-live="polite">${quantity}</span>
+          <button type="button" data-action="card-plus" aria-label="${t('Augmenter', 'زيد')}">+</button>
+        </div>`
+      : `<button class="card-add-button" type="button" data-action="card-add" aria-label="${t('Ajouter', 'أضف')} ${nameOf(product)}">+</button>`;
+  });
+}
 function itemTotal(product, quantity) { return product.price * quantity; }
 function basketTotal(items = readBasket()) {
   return items.reduce((sum, item) => sum + itemTotal(productById(item.id), item.quantity), 0);
@@ -232,11 +245,21 @@ function breadcrumb(parts) {
   return `<a href="${routeUrl()}">${t('Accueil', 'الرئيسية')}</a>${parts.map(part => `<span>/</span>${part}`).join('')}`;
 }
 function productCard(product) {
-  return `<a class="product-card" href="${productLink(product.id)}">
-    <img src="${imageOf(product)}" alt="${nameOf(categoryById(product.category))}" loading="lazy">
-    <span class="card-content"><h3>${nameOf(product)}</h3><p>${product[language === 'ar' ? 'listingAr' : 'listingFr'] || sizeOf(product)}</p>
-    <span class="price-line"><span>${money(product.price)}</span><span aria-hidden="true">↗</span></span></span>
-  </a>`;
+  const quantity = readBasket().find(item => item.id === product.id)?.quantity || 0;
+  return `<article class="product-card" data-id="${product.id}">
+    <a class="product-card-link" href="${productLink(product.id)}">
+      <img src="${imageOf(product)}" alt="${nameOf(categoryById(product.category))}" loading="lazy">
+      <span class="card-content"><h3>${nameOf(product)}</h3><p>${product[language === 'ar' ? 'listingAr' : 'listingFr'] || sizeOf(product)}</p></span>
+    </a>
+    <div class="price-line"><span>${money(product.price)}</span><span class="card-add-control">${quantity
+      ? `<div class="card-quantity" aria-label="${t('Quantité dans le panier', 'الكمية فالسلة')}">
+          <button type="button" data-action="card-minus" aria-label="${t('Diminuer', 'نقص')}">−</button>
+          <span aria-live="polite">${quantity}</span>
+          <button type="button" data-action="card-plus" aria-label="${t('Augmenter', 'زيد')}">+</button>
+        </div>`
+      : `<button class="card-add-button" type="button" data-action="card-add" aria-label="${t('Ajouter', 'أضف')} ${nameOf(product)}">+</button>`}
+    </span></div>
+  </article>`;
 }
 function renderHome() {
   document.title = 'Moul Zri3a';
@@ -358,7 +381,15 @@ document.querySelector('main').addEventListener('click', event => {
   const button = event.target.closest('button[data-action]');
   if (!button) return;
   const action = button.dataset.action;
-  if (action === 'product-plus' || action === 'product-minus') {
+  if (action === 'card-add' || action === 'card-plus' || action === 'card-minus') {
+    const id = button.closest('.product-card')?.dataset.id;
+    if (!id) return;
+    const quantity = readBasket().find(item => item.id === id)?.quantity || 0;
+    if (action === 'card-minus' && quantity <= 1) removeFromBasket(id);
+    else if (action === 'card-minus') changeBasketQuantity(id, quantity - 1);
+    else addToBasket(id, 1);
+    updateProductCardControls(id);
+  } else if (action === 'product-plus' || action === 'product-minus') {
     productQuantity = clampQuantity(productQuantity + (action === 'product-plus' ? 1 : -1));
     document.querySelector('#product-quantity').value = productQuantity;
   } else if (action === 'buy-now') {
