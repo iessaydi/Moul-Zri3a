@@ -35,8 +35,11 @@ main { flex: 1; }
 .hero { position: relative; min-height: 590px; display: flex; align-items: end; background: #76543d url('../assets/nuts-and-seeds.jpg') center/cover; }
 .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #0b2525e8, #0b252577 55%, #0b25250f); }
 .hero-content { position: relative; width: 100%; color: white; padding-block: 85px 72px; }
-.eyebrow { display: block; color: #ffe0aa; text-transform: uppercase; letter-spacing: .15em; font-size: .78rem; font-weight: 700; margin-bottom: 16px; }
-.hero h1 { font-size: clamp(3.5rem, 6.4vw, 7rem); max-width: 800px; margin-bottom: 20px; }
+.eyebrow { display: block; color: #ffe0aa; text-transform: uppercase; letter-spacing: .15em; font-size: .84rem; font-weight: 700; margin-bottom: 16px; }
+body[dir="rtl"] .eyebrow { font-size: 1.06rem; letter-spacing: .08em; }
+body[dir="ltr"] .eyebrow { font-size: .9rem; }
+.hero h1 { font-size: clamp(3.8rem, 6.8vw, 7.3rem); max-width: 800px; margin-bottom: 20px; }
+body[dir="rtl"] .hero h1 { font-size: clamp(4.1rem, 7.2vw, 7.7rem); }
 .hero h1 em { color: var(--orange); font-style: normal; }
 .hero p { max-width: 540px; font-size: 1.12rem; color: #f8f1e7; margin-bottom: 28px; }
 .primary-link, .dark-button, .orange-button { display: inline-flex; justify-content: center; align-items: center; border: 0; border-radius: 30px; padding: 13px 20px; min-height: 48px; font-weight: 700; }
