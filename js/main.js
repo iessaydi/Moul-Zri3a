@@ -170,6 +170,9 @@ function basketCount() { return readBasket().reduce((sum, item) => sum + item.qu
 function updateBasketCount() { document.querySelector('#basket-count').textContent = basketCount(); }
 function updateProductCardControls(id) {
   const quantity = readBasket().find(item => item.id === id)?.quantity || 0;
+  document.querySelectorAll(`.product-card[data-id="${id}"]`).forEach(card => {
+    card.classList.toggle('has-quantity', quantity > 0);
+  });
   document.querySelectorAll(`.product-card[data-id="${id}"] .card-add-control`).forEach(actions => {
     const product = productById(id);
     actions.innerHTML = quantity
@@ -246,7 +249,7 @@ function breadcrumb(parts) {
 }
 function productCard(product) {
   const quantity = readBasket().find(item => item.id === product.id)?.quantity || 0;
-  return `<article class="product-card" data-id="${product.id}">
+  return `<article class="product-card${quantity ? ' has-quantity' : ''}" data-id="${product.id}">
     <a class="product-card-link" href="${productLink(product.id)}">
       <img src="${imageOf(product)}" alt="${nameOf(categoryById(product.category))}" loading="lazy">
       <span class="card-content"><h3>${nameOf(product)}</h3><p>${product[language === 'ar' ? 'listingAr' : 'listingFr'] || sizeOf(product)}</p></span>
