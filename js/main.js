@@ -249,7 +249,7 @@ function breadcrumb(parts) {
 }
 function productCard(product) {
   const quantity = readBasket().find(item => item.id === product.id)?.quantity || 0;
-  return `<article class="product-card${quantity ? ' has-quantity' : ''}" data-id="${product.id}">
+  return `<article class="product-card${quantity ? ' has-quantity' : ''}${product.category === 'drinks' ? ' image-fit-contain' : ''}" data-id="${product.id}">
     <a class="product-card-link" href="${productLink(product.id)}">
       <img src="${imageOf(product)}" alt="${nameOf(categoryById(product.category))}" loading="lazy">
       <span class="card-content"><h3>${nameOf(product)}</h3><p>${product[language === 'ar' ? 'listingAr' : 'listingFr'] || sizeOf(product)}</p></span>
@@ -305,6 +305,7 @@ function renderProduct(id) {
     `<strong>${nameOf(product)}</strong>`
   ]);
   document.querySelector('#product-image').src = imageOf(product);
+  document.querySelector('#product-image').classList.toggle('image-fit-contain', product.category === 'drinks');
   document.querySelector('#product-image').alt = nameOf(product);
   document.querySelector('#product-category').textContent = nameOf(category);
   document.querySelector('#product-title').textContent = nameOf(product);
