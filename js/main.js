@@ -479,4 +479,10 @@ document.querySelector('#language-button').addEventListener('click', () => {
   route();
 });
 window.addEventListener('popstate', route);
+const siteHeader = document.querySelector('.site-header');
+function updateStickyHeaderShadow() {
+  siteHeader.classList.toggle('is-sticky', siteHeader.getBoundingClientRect().top <= 0);
+}
+window.addEventListener('scroll', updateStickyHeaderShadow, {passive: true});
+updateStickyHeaderShadow();
 route();
