@@ -24,6 +24,7 @@ main { flex: 1; }
 .logo { font: 700 2rem/1 'Fraunces', Georgia, serif; letter-spacing: -.055em; white-space: nowrap; }
 .logo span { color: #e78935; }
 .main-nav, .header-actions { display: flex; align-items: center; gap: 22px; }
+.mobile-nav { display: none; }
 .main-nav a { font-weight: 700; font-size: .91rem; }
 .main-nav a:hover, .site-footer a:hover { text-decoration: underline; }
 .header-actions { gap: 10px; }
@@ -149,7 +150,8 @@ body[dir=rtl] .logo { direction: ltr; unicode-bidi: isolate; }
 
 @media (max-width: 850px) {
   .site-header { flex-wrap: wrap; padding-block: 16px; }
-  .main-nav { order: 3; width: 100%; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 13px; }
+  .desktop-nav { display: none; }
+  .mobile-nav { display: flex; width: 100%; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 13px; }
   .intro, .about-inner { grid-template-columns: 1fr; gap: 20px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .product-detail { gap: 35px; }

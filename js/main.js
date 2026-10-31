@@ -267,10 +267,10 @@ function updateSharedText() {
   document.querySelectorAll('[data-fr]').forEach(element => {
     element.innerHTML = element.dataset[language];
   });
-  document.querySelector('#whatsapp-catalog').href = WHATSAPP_CATALOG;
+  document.querySelectorAll('#whatsapp-catalog, #mobile-whatsapp-catalog').forEach(link => { link.href = WHATSAPP_CATALOG; });
   document.querySelector('#home-link').href = routeUrl();
   document.querySelector('#footer-home-link').href = routeUrl();
-  document.querySelector('#categories-link').href = routeUrl({section: 'categories'});
+  document.querySelectorAll('#categories-link, #mobile-categories-link').forEach(link => { link.href = routeUrl({section: 'categories'}); });
   document.querySelector('#categories-cta').href = routeUrl({section: 'categories'});
   document.querySelector('#basket-link').href = routeUrl({basket: '1'});
   document.querySelector('#product-request-link').href = whatsappLink(t(
