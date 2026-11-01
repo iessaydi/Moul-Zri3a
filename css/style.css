@@ -151,7 +151,7 @@ body[dir=rtl] .logo { direction: ltr; unicode-bidi: isolate; }
 @media (max-width: 850px) {
   .site-header { flex-wrap: wrap; padding-block: 16px; }
   .desktop-nav { display: none; }
-  .mobile-nav { display: flex; width: 100%; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 13px; }
+  .mobile-nav { display: flex; width: 100%; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 6px; padding-bottom: 8px; }
   .intro, .about-inner { grid-template-columns: 1fr; gap: 20px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .product-detail { gap: 35px; }
