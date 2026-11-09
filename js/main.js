@@ -1,11 +1,11 @@
 const catalog = {
   categories: [
-    {id:'fruits-secs', fr:'Fruits secs & noix', ar:'الفواكه الجافة والمكسرات', descriptionFr:'Noix et fruits secs pour une pause ou pour partager.', descriptionAr:'مكسرات وفواكه جافة للذوق أو للمشاركة.', image:'assets/nuts-and-seeds.jpg'},
-    {id:'biscuits', fr:'Biscuits & chocolat', ar:'البسكويت والشوكولا', descriptionFr:'Les douceurs qui accompagnent bien une petite pause.', descriptionAr:'بسكويت وشوكولا لوقت البنة.', image:'assets/biscuits.jpg'},
-    {id:'chips', fr:'Chips & snacks', ar:'الشيبس والسناكس', descriptionFr:'Du salé et du croustillant à emporter ou à partager.', descriptionAr:'لكل وقت', image:'assets/chips.jpg'},
-    {id:'drinks', fr:'Eau & boissons', ar:'الماء والمشروبات', descriptionFr:'Une gorgée de fraîcheur.', descriptionAr:'برد على قلبك وانتعش!', image:'assets/drinks-cover.png'},
-    {id:'bonbons', fr:'Bonbons & gommes', ar:'الحلوى والعلكة', descriptionFr:'Une sélection colorée pour les envies sucrées.', descriptionAr:'شي حاجة حلوة', image:'assets/candy.jpg'},
-    {id:'glaces', fr:'Glaces', ar:'الكلاص', descriptionFr:'Une touche fraîche pour les journées chaudes.', descriptionAr:'باش تبرد الجو', image:'assets/ice-cream.jpg'}
+    {id:'fruits-secs', fr:'Fruits secs & noix', ar:'الفواكه الجافة والمكسرات', descriptionFr:'Noix et fruits secs pour une pause ou pour partager.', descriptionAr:'مكسرات وفواكه جافة للذوق أو للمشاركة.', image:'assets/nuts-and-seeds.jpg', icon:'🥜'},
+    {id:'biscuits', fr:'Biscuits & chocolat', ar:'البسكويت والشوكولا', descriptionFr:'Les douceurs qui accompagnent bien une petite pause.', descriptionAr:'بسكويت وشوكولا لوقت البنة.', image:'assets/biscuits.jpg', icon:'🍪'},
+    {id:'chips', fr:'Chips & snacks', ar:'الشيبس والسناكس', descriptionFr:'Du salé et du croustillant à emporter ou à partager.', descriptionAr:'لكل وقت', image:'assets/chips.jpg', icon:'🍿'},
+    {id:'drinks', fr:'Eau & boissons', ar:'الماء والمشروبات', descriptionFr:'Une gorgée de fraîcheur.', descriptionAr:'برد على قلبك وانتعش!', image:'assets/drinks-cover.png', icon:'🥤'},
+    {id:'bonbons', fr:'Bonbons & gommes', ar:'الحلوى والعلكة', descriptionFr:'Une sélection colorée pour les envies sucrées.', descriptionAr:'شي حاجة حلوة', image:'assets/candy.jpg', icon:'🍬'},
+    {id:'glaces', fr:'Glaces', ar:'الكلاص', descriptionFr:'Une touche fraîche pour les journées chaudes.', descriptionAr:'باش تبرد الجو', image:'assets/ice-cream.jpg', icon:'🍦'}
   ],
   // Demonstration names and prices. Replace with the shop's actual catalog before selling.
   products: [
@@ -303,9 +303,9 @@ function productCard(product) {
 }
 function renderHome() {
   document.title = 'Moul Zri3a';
-  document.querySelector('#category-grid').innerHTML = catalog.categories.map((category, index) => `
+  document.querySelector('#category-grid').innerHTML = catalog.categories.map(category => `
     <a class="category-tile" href="${categoryLink(category.id)}">
-      <span class="tile-number">0${index + 1}</span>
+      <span class="category-icon" aria-hidden="true">${category.icon}</span>
       <span><h3>${nameOf(category)}</h3><small>${category[language === 'ar' ? 'descriptionAr' : 'descriptionFr']}</small></span>
       <span class="round-arrow" aria-hidden="true">↗</span>
     </a>`).join('');
