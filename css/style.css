@@ -173,8 +173,8 @@ body[dir=rtl] .logo { direction: ltr; unicode-bidi: isolate; }
   .intro { padding-block: 42px; }
   .home-categories { padding-block: 32px 62px; }
   .category-grid { grid-template-columns: 1fr; }
-  .category-tile { min-height: 112px; padding: 18px; grid-template-columns: 48px 1fr 42px; gap: 13px; }
-  .category-icon { width: 48px; height: 48px; font-size: 2.2rem; }
+  .category-tile { min-height: 112px; padding: 18px; grid-template-columns: 42px 1fr 42px; gap: 13px; }
+  .category-icon { width: 42px; height: 42px; font-size: 1.9rem; }
   .category-tile h3 { font-size: 1.5rem; }
   .about { padding-block: 52px; }
   .category-banner { display: flex; flex-direction: column-reverse; }
