@@ -19,6 +19,17 @@
   <meta name="twitter:description" content="Zri3a, fruits secs, bonbons, biscuits, boissons et snacks.">
   <meta name="twitter:image" content="https://moulzri3a.vercel.app/assets/social-preview.jpg">
   <script>
+    try {
+      const savedTheme = localStorage.getItem('moul-zri3a-theme');
+      document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark'
+        ? savedTheme
+        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (error) {
+      console.warn('Unable to load saved theme preference.', error);
+      document.documentElement.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+  </script>
+  <script>
     if (location.protocol !== 'file:') {
       const base = document.createElement('base');
       base.href = '/';
@@ -40,6 +51,7 @@
     </nav>
     <div class="header-actions">
       <a class="basket-link" id="basket-link" href="?basket=1"><span data-fr="Panier" data-ar="السلة">Panier</span> <span class="basket-count" id="basket-count">0</span></a>
+      <button class="theme-button" id="theme-button" type="button" aria-label="Activer le mode sombre" title="Activer le mode sombre">☾</button>
       <button class="language-button" id="language-button" type="button" aria-label="Change language">العربية</button>
     </div>
   </header>

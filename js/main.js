@@ -135,6 +135,7 @@ const catalog = {
 const WHATSAPP_NUMBER = '212769611475';
 const WHATSAPP_CATALOG = `https://wa.me/c/${WHATSAPP_NUMBER}`;
 const BASKET_KEY = 'moul-zri3a-basket-v1';
+const THEME_KEY = 'moul-zri3a-theme';
 const DELIVERY_MINIMUM = 25;
 const DELIVERY_FEE = 5;
 const FREE_DELIVERY_THRESHOLD = 50;
@@ -278,8 +279,19 @@ function updateSharedText() {
     'سلام، ما لقيتش المنتوج اللي كنقلب عليه. واش تقدروا تعاونوني؟'
   ));
   document.querySelector('#language-button').textContent = language === 'fr' ? 'العربية' : 'Français';
+  updateThemeButton();
   document.querySelector('#year').textContent = new Date().getFullYear();
   updateBasketCount();
+}
+function updateThemeButton() {
+  const isDark = document.documentElement.dataset.theme === 'dark';
+  const label = isDark
+    ? t('Activer le mode clair', 'تفعيل الوضع الفاتح')
+    : t('Activer le mode sombre', 'تفعيل الوضع الداكن');
+  const button = document.querySelector('#theme-button');
+  button.textContent = isDark ? '☀' : '☾';
+  button.setAttribute('aria-label', label);
+  button.title = label;
 }
 function breadcrumb(parts) {
   return `<a href="${routeUrl()}">${t('Accueil', 'الرئيسية')}</a>${parts.map(part => `<span>/</span>${part}`).join('')}`;
@@ -477,6 +489,13 @@ document.querySelector('#language-button').addEventListener('click', () => {
   const search = params.toString();
   history.replaceState(null, '', `${location.pathname}${search ? `?${search}` : ''}`);
   route();
+});
+document.querySelector('#theme-button').addEventListener('click', () => {
+  const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = theme;
+  updateThemeButton();
+  try { localStorage.setItem(THEME_KEY, theme); }
+  catch (error) { console.warn('Unable to save theme preference.', error); }
 });
 window.addEventListener('popstate', route);
 const siteHeader = document.querySelector('.site-header');
